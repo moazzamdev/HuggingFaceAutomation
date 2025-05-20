@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hugging Face Automation</title>
+</head>
+<body>
+  <h2>Live Automation Preview</h2>
+  <img id="stream" width="100%" />
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js"></script>
+  <script>
+    var socket = io();
+    var img = document.getElementById('stream');
+    socket.on('frame', function (data) {
+      img.src = 'data:image/jpeg;base64,' + btoa(
+        new Uint8Array(data).reduce((s, b) => s + String.fromCharCode(b), '')
+      );
+    });
+  </script>
+</body>
+</html>
