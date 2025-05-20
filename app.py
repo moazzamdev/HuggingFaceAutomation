@@ -16,8 +16,8 @@ from selenium.common.exceptions import TimeoutException, ElementClickIntercepted
 app = Flask(__name__)
 
 
-HF_EMAIL = "adul.moiz180@gmail.com"
-HF_PASSWORD = "@Hanbhai12345"
+HF_EMAIL = "your-mail/username"
+HF_PASSWORD = "your password"
 
 
 DOWNLOAD_DIR = os.path.join(os.getcwd(), "huggingface_downloads")
